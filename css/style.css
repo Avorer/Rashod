@@ -511,7 +511,7 @@ a:hover {
 
 /* Кнопка РЕВЕРС - красная с ярко-красной окантовкой */
 .direction-btn[data-direction="reverse"] {
-    color: #ffffff;
+    color: var(--neon-green);
     border: 2px solid #ff0000;
     box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
 }
@@ -524,7 +524,7 @@ a:hover {
 
 .direction-btn[data-direction="reverse"].active {
     background: #ff0000;
-    color: #000;
+    color: #ffffff;
     box-shadow: 0 0 25px #ff3333, 0 0 50px rgba(255, 0, 0, 0.6);
     border-color: #ff6666;
 }
