@@ -120,7 +120,7 @@ const driversData = [
     { 
         name: "РУСЛАН 14", 
         car: "ВАЗ-2114", 
-        time_ivanovskoe_forward: "3:35.0", time_ivanovskoe_reverse: "3:31.0",
+        time_ivanovskoe_forward: "3:45.0", time_ivanovskoe_reverse: "3:32.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
