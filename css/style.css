@@ -402,62 +402,62 @@ a:hover {
 
 /* Кнопка Ивановское - красная */
 .track-btn[data-track="ivanovskoe"] {
-    color: #00ff00;
-    border: 2px solid #ff0000;
+    color: var(--neon-green);
+    border: 2px solid var(--neon-red);
     box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
 }
 
 .track-btn[data-track="ivanovskoe"]:hover {
-    background: #ff0000;
-    color: #000;
+    background: var(--neon-red);
+    color: var(--dark-bg);
     box-shadow: 0 0 20px #ff0000;
 }
 
 .track-btn[data-track="ivanovskoe"].active {
-    background: #ff0000;
-    color: #000;
+    background: var(--neon-red);
+    color: var(--dark-bg);
     box-shadow: 0 0 25px #ff3333, 0 0 50px rgba(255, 0, 0, 0.6);
     border-color: #ff6666;
 }
 
-/* Кнопка Глубокое озеро - голубая с яркой окантовкой */
+/* Кнопка Глубокое озеро - голубая */
 .track-btn[data-track="glubokoe"] {
-    color: #00ff00;
-    border: 2px solid #66ffff;
-    box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+    color: var(--neon-green);
+    border: 2px solid var(--neon-red);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
 }
 
 .track-btn[data-track="glubokoe"]:hover {
-    background: #66ffff;
-    color: #000;
-    box-shadow: 0 0 20px #66ffff;
+    background: var(--neon-red);
+    color: var(--dark-bg);
+    box-shadow: 0 0 20px #ff0000;
 }
 
 .track-btn[data-track="glubokoe"].active {
-    background: var(--neon-blue);
-    color: #000;
-    box-shadow: 0 0 25px #66ffff, 0 0 50px rgba(0, 255, 255, 0.6);
-    border-color: #99ffff;
+    background: var(--neon-red);
+    color: var(--dark-bg);
+    box-shadow: 0 0 25px #ff3333, 0 0 50px rgba(255, 0, 0, 0.6);
+    border-color: #ff6666;
 }
 
-/* Кнопка Раифский дендрарий - салатовая */
+/* Кнопка Раифский дендрарий - красная */
 .track-btn[data-track="raifa"] {
-    color: #00ff00;
-    border: 2px solid #00ff00;
-    box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+    color: var(--neon-green);
+    border: 2px solid var(--neon-red);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
 }
 
 .track-btn[data-track="raifa"]:hover {
-    background: #00ff00;
-    color: #000;
-    box-shadow: 0 0 20px #00ff00;
+    background: var(--neon-red);
+    color: var(--dark-bg);
+    box-shadow: 0 0 20px #ff0000;
 }
 
 .track-btn[data-track="raifa"].active {
-    background: #00ff00;
-    color: #000;
-    box-shadow: 0 0 25px #33ff33, 0 0 50px rgba(0, 255, 0, 0.6);
-    border-color: #66ff66;
+    background: var(--neon-red);
+    color: var(--dark-bg);
+    box-shadow: 0 0 25px #ff3333, 0 0 50px rgba(255, 0, 0, 0.6);
+    border-color: #ff6666;
 }
 
 /* === ПЕРЕКЛЮЧАТЕЛЬ НАПРАВЛЕНИЯ === */
@@ -511,7 +511,7 @@ a:hover {
 
 /* Кнопка РЕВЕРС - красная с ярко-красной окантовкой */
 .direction-btn[data-direction="reverse"] {
-    color: #00ff00;
+    color: #ffffff;
     border: 2px solid #ff0000;
     box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
 }
