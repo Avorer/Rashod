@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAZAFAKERS | Уличные гонки 90-х</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        /* === ОСНОВНЫЕ СТИЛИ 90-х === */
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            background-image: 
+                url('https://a.d-cd.net/yMD6XohVs4OPL-BKiYX0oWoEJFE-960.jpg'),
+                linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,50,0,0.2) 100%);
+            background-attachment: fixed;
+        }
+
+        /* === КРИВОЙ КОНТЕЙНЕР КАК В 90-х === */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 4px solid #f00;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 20px #0f0;
+        }
+
+        /* === ХЕДЕР В СТИЛЕ 90-х === */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 3px dashed #0f0;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: 'Audiowide', cursive;
+            color: #ff0;
+            text-shadow: 0 0 10px #f00;
+            font-size: 2.5em;
+            margin: 0;
+            animation: blink 1s infinite;
+        }
+
+        h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: #0ff;
+            font-size: 1.5em;
+            border-bottom: 2px dotted #f0f;
+            padding-bottom: 5px;
+        }
+
+        /* === МЕНЮ В СТИЛЕ 90-х === */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #0f0;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 2px solid #f00;
+            background: #000;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: #f00;
+            color: #000;
+            text-shadow: 0 0 5px #0f0;
+        }
+
+        /* === КАРТОЧКИ ТРАСС === */
+        .track {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #0ff;
+            background: rgba(0, 30, 30, 0.5);
+        }
+
+        .track h3 {
+            color: #ff0;
+            font-family: 'Press Start 2P', cursive;
+            margin-top: 0;
+        }
+
+        .track p {
+            margin: 10px 0;
+        }
+
+        .track-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .track-stats span {
+            background: #000;
+            color: #f0f;
+            padding: 5px 10px;
+            border: 1px solid #0f0;
+        }
+
+        /* === КАРТОЧКИ ГОНЩИКОВ === */
+        .racer {
+            margin: 15px 0;
+            padding: 15px;
+            border: 2px solid #f0f;
+            background: rgba(30, 0, 30, 0.5);
+        }
+
+        .racer h3 {
+            color: #ff0;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+
+        .racer-car {
+            color: #0ff;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .racer-spec {
+            color: #aaa;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+
+        .racer-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .racer-stat {
+            background: #000;
+            color: #f00;
+            padding: 5px 10px;
+            border: 1px solid #0f0;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8em;
+        }
+
+        /* === ТАБЛИЦА РЕКОРДОВ === */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #0f0;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #003300;
+            color: #ff0;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(0, 50, 0, 0.3);
+        }
+
+        /* === ФУТЕР В СТИЛЕ 90-х === */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            border-top: 3px dashed #0f0;
+            font-size: 0.8em;
+            color: #0f0;
+        }
+
+        /* === АНИМАЦИИ === */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .glitch {
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 2px 0 #f00, -2px 0 #0ff; }
+            25% { text-shadow: -2px 0 #f00, 2px 0 #0ff; }
+            50% { text-shadow: 2px 0 #f0f, -2px 0 #ff0; }
+            75% { text-shadow: -2px 0 #f0f, 2px 0 #ff0; }
+            100% { text-shadow: 2px 0 #0ff, -2px 0 #f00; }
+        }
+
+        /* === ДВИЖУЩАЯСЯ МАШИНА === */
+        .road {
+            height: 50px;
+            background: #111;
+            position: relative;
+            overflow: hidden;
+            margin: 20px 0;
+            border-top: 2px dashed #0f0;
+            border-bottom: 2px dashed #0f0;
+        }
+
+        .car {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            background: #555;
+            top: 10px;
+            animation: drive 5s linear infinite;
+        }
+
+        .car:before {
+            content: "»";
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: #f00;
+            font-size: 20px;
+        }
+
+        @keyframes drive {
+            0% { left: -100px; }
+            100% { left: 100%; }
+        }
+
+        a:link {color:#00FF00}
+        a:visited {color:#00FF00}
+        a:hover {color:#00FF00}
+        a:active {color:#00FF00}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="glitch">MAZAFAKERS</h1>
+            <p>Гонки по серпантинам с 2025 года</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#tracks">Трассы</a></li>
+                <li><a href="#drivers">Гонщики</a></li>
+                <li><a href="#records">Рекорды</a></li>
+                <li><a href="#about">О нас</a></li>
+            </ul>
+        </nav>
+
+        <div class="road">
+            <div class="car"></div>
+        </div>
+
+        <section id="tracks">
+            <h2>НАШИ ТРАССЫ</h2>
+            
+            <div class="track">
+                <h3>ИВАНОВСКОЕ</h3>
+                <p>Легендарный серпантин с крутым и коварным поворотом. Запомни его.</p>
+                <div class="track-stats">
+                    <span>Длина: 6 км</span>
+                    <span>Повороты: 16</span>
+                    <span>Рекорд: 3.33.0 - 3.38.0</span>
+                </div>
+            </div>
+
+            <div class="track">
+                <h3>ГЛУБОКОЕ ОЗЕРО</h3>
+                <p>Техничная трасса с двумя резкими поворотами. Подойдет для новечка. Следи за людьми, рядом база отдыха.</p>
+                <div class="track-stats">
+                    <span>Длина: 1.61 км</span>
+                    <span>Повороты: 5</span>
+                    <span>Рекорд: 0.00.0</span>
+                </div>
+            </div>
+
+            <div class="track">
+                <h3>РАИФСКИЙ ДЕНДАРИЙ (NEW)</h3>
+                <p>Новая трасса, коментарий мало. Широкая, с не очень крутыми поворотами, можно входить широко и быстро.</p>
+                <div class="track-stats">
+                    <span>Длина: 3.6 км</span>
+                    <span>Повороты: 8</span>
+                    <span>Рекорд: 0.00.0</span>
+                </div>
+            </div>
+
+             <div class="track">
+                <h3>БОРИСКОВО (NEW)</h3>
+                <p>Новая трасса, коментарий мало. Трасса в доль озера В. Кабан, очень красиво, имеется трафик. Не лесная.</p>
+                <div class="track-stats">
+                    <span>Длина: 2.77 км</span>
+                    <span>Повороты: 10</span>
+                    <span>Рекорд: 0.00.0</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="road">
+            <div class="car"></div>
+        </div>
+
+        <section id="drivers">
+            <h2>НАША КОМАНДА</h2>
+            
+            <div class="racer">
+                <h3>АРТУРКА ОПЕЛЬ (Выбыл на неопределенное время)</h3>
+                <div class="racer-car">Opel Astra H GTC</div>
+                <div class="racer-spec">Легкий стейдж + выхлоп + задушен подогрев дросселя.</div>
+                <div class="racer-stats">
+                    <div class="racer-stat">ПОБЕДЫ: 0</div>
+                    <div class="racer-stat">РЕКОРД: 0.00.0</div>
+                </div>
+            </div>
+
+            <div class="racer">
+                <h3>РУСЛАН ГРАНТА</h3>
+                <div class="racer-car">ВАЗ-2190 (Granta FL) (Временно выбыла в связи с ДТП)</div>
+                <div class="racer-spec">В полном боевом строю, нью восьмиклоп на высокой клапанной крышке, литье, стойки хуейки, проставки развал, вся в клейках, ФИОЛЕТОВЫЕ КОВРИКИ. Короче полный фарш чуваки.</div>
+                <div class="racer-stats">
+                    <div class="racer-stat">ПОБЕДЫ: 0</div>
+                    <div class="racer-stat">РЕКОРД: 3.33.0</div>
+                </div>
+            </div>
+
+            <div class="racer">
+                <h3>ГЛЕБУСЯ 13КА</h3>
+                <div class="racer-car">ВАЗ-2113</div>
+                <div class="racer-spec">Ебанутая дрочка с компрессией 5.5, друселя варш хуярш.</div>
+                <div class="racer-stats">
+                    <div class="racer-stat">ПОБЕДЫ: 0</div>
+                    <div class="racer-stat">РЕКОРД: 0.00.0</div>
+                </div>
+            </div>
+
+            <div class="racer">
+                <h3>АРТУР СОЛЯРА</h3>
+                <div class="racer-car">Hyundai Solaris (Память ушедшей)</div>
+                <div class="racer-spec">Выбыла в связи с ДТП (Навсегда, или нет?).</div>
+                <div class="racer-car">ВАЗ-2113</div>
+                <div class="racer-spec">Новая машина, пока в дороботках. На полном ходу, ладатрактор.</div>
+                <div class="racer-stats">
+                    <div class="racer-stat">ПОБЕДЫ: 0</div>
+                    <div class="racer-stat">РЕКОРД: 0.00.0</div>
+                </div>
+            </div>
+
+            <div class="racer">
+                <h3>ТИМОХА ГРАНТА</h3>
+                <div class="racer-car">ВАЗ-2190 (1 поколение)</div>
+                <div class="racer-spec">Холодный впуск, литые 14 диски (Полуслик), ПРОшивка, стойки Demfi, пружины перед -70.</div>
+                <div class="racer-car">ВАЗ-2107</div>
+                <div class="racer-spec">Сток, резерв кар. С дальнейшими планами....</div>
+                <div class="racer-stats">
+                    <div class="racer-stat">ПОБЕДЫ: 0</div>
+                    <div class="racer-stat">РЕКОРД: 0.18.0</div>
+                </div>
+            </div>
+
+            <div class="racer">
+                <h3>РУСЛАН СЕРАТА</h3>
+                <div class="racer-car">Kia Cerato</div>
+                <div class="racer-spec">Ката нет, легкий стейдж, евро 2.</div>
+                <div class="racer-stats">
+                    <div class="racer-stat">ПОБЕДЫ: 0</div>
+                    <div class="racer-stat">РЕКОРД: 0.00.0</div>
+                </div>
+            </div>
+
+            <div class="racer">
+                <h3>ЭДИК 12КА</h3>
+                <div class="racer-car">ВАЗ-2112</div>
+                <div class="racer-spec">По спеку нечего нет.</div>
+                <div class="racer-stats">
+                    <div class="racer-stat">ПОБЕДЫ: 0</div>
+                    <div class="racer-stat">РЕКОРД: 0.00.0</div>
+                </div>
+            </div>
+
+            <div class="racer">
+                <h3>МАРСЕЛЬ ДИКАЛЮШЕН</h3>
+                <div class="racer-car">Mitsubishi Lancer IX (1)</div>
+                <div class="racer-spec">Запил на два ветка, выхлоп 63.</div>
+                <div class="racer-car">Mitsubishi Lancer IX (2)</div>
+                <div class="racer-spec">По спеку не известно, нью кар.</div>
+                <div class="racer-stats">
+                    <div class="racer-stat">ПОБЕДЫ: 0</div>
+                    <div class="racer-stat">РЕКОРД: 0.00.0</div>
+                </div>
+            </div>
+
+            <div class="racer">
+                <h3>AVORER</h3>
+                <div class="racer-car">ВАЗ-21099</div>
+                <div class="racer-spec">Задний запил на 3 витка, нулевик, морда от ВАЗ 2114, 14ое литье.</div>
+                <div class="racer-car">ВАЗ-2107</div>
+                <div class="racer-spec">Сток, резерв кар. С дальнейшими планами....</div>
+                <div class="racer-stats">
+                    <div class="racer-stat">ПОБЕДЫ: 0</div>
+                    <div class="racer-stat">РЕКОРД: 0.00.0</div>
+                </div>
+            </div>
+
+            <div class="racer">
+                <h3>ЯГОР ЧОПИРКУС</h3>
+                <div class="racer-car">ВАЗ-2114</div>
+                <div class="racer-spec">Чопирка пропердоля, ЖоперСпортСтайл посадка, 1.6 8мипук.</div>
+                <div class="racer-stats">
+                    <div class="racer-stat">ПОБЕДЫ: 0</div>
+                    <div class="racer-stat">РЕКОРД: 0.00.0</div>
+                </div>
+            </div>
+
+            <div class="racer">
+                <h3>АЙДАР ПИЗДЕЦ</h3>
+                <div class="racer-car">ВАЗ-2110 Богдан</div>
+                <div class="racer-spec">Интересная история авто, спорт стойки, 16рь с бошкой 1.7, трасса старый стингерпук, в принципе на все похуй, летать 200 с погнутой балкой.. Хуйня вопрос..</div>
+                <div class="racer-stats">
+                    <div class="racer-stat">ПОБЕДЫ: 0</div>
+                    <div class="racer-stat">РЕКОРД: 0.00.0</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="road">
+            <div class="car"></div>
+        </div>
+
+        <section id="records">
+            <h2>РЕКОРДЫ 2025</h2>
+            <table>
+                <tr>
+                    <th>Трасса</th>
+                    <th>Гонщик</th>
+                    <th>Время</th>
+                    <th>Машина</th>
+                </tr>
+                <tr>
+                    <td>Ивановское</td>
+                    <td>РУСЛАН ГРАНТА</td>
+                    <td>3.33.0</td>
+                    <td>ВАЗ-2113</td>
+                </tr>
+                <tr>
+                    <td>Глубокое озеро</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Раифский дендрарий (NEW)</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                 <tr>
+                    <td>Борисково (NEW)</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </section>
+
+        <div class="road">
+            <div class="car"></div>
+        </div>
+
+        <section id="about">
+            <h2>О НАС</h2>
+            <p>MAZAFAKERS - команда уличных гонщиков с 2025 года. Катаем тоге, пьем колу, слушаем Eurobeat.</p>
+            <p>Наши принципы: Ебать 13ку, ездить быстро, собирать деревья.</p>
+            <p>© 2025-20XX MAZAFAKERS Racing</p>
+        </section>
+
+        <footer>
+            <p>Сайт написан AvorerInc | Гоняйте не в городе, а с нами!</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
