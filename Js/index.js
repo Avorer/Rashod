@@ -48,7 +48,7 @@ const driversData = [
     { 
         name: "ЭДИКЕ ОТЕЦ", 
         car: "ВАЗ-2112", 
-        time_ivanovskoe_forward: null, time_ivanovskoe_reverse: null,
+        time_ivanovskoe_forward: null, time_ivanovskoe_reverse: "5:22.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
