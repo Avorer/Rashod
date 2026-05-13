@@ -125,7 +125,7 @@ const driversData = [
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
         profile: "drivers/rus_2114.html" 
-    }
+    },
     { 
         name: "АЛСАНДР 10КА", 
         car: "ВАЗ-2110", 
@@ -134,7 +134,7 @@ const driversData = [
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
         profile: "drivers/alexanr_10ka.html" 
-    }
+    },
     { 
         name: "МАКС КОРСА", 
         car: "Opel Corsa", 
