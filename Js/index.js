@@ -102,7 +102,7 @@ const driversData = [
     { 
         name: "АЛМАЗ СОЛЯРИС", 
         car: "Hyundai Solaris", 
-        time_ivanovskoe_forward: null, time_ivanovskoe_reverse: null,
+        time_ivanovskoe_forward: null, time_ivanovskoe_reverse: "4:03.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
