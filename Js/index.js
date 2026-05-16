@@ -21,7 +21,7 @@ const driversData = [
     { 
         name: "ГЛЕБОБ 13 69", 
         car: "ВАЗ-2113", 
-        time_ivanovskoe_forward: "4:33.0", time_ivanovskoe_reverse: null,
+        time_ivanovskoe_forward: "3:32.0", time_ivanovskoe_reverse: "3:46.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
@@ -102,7 +102,7 @@ const driversData = [
     { 
         name: "АЛМАЗ СОЛЯРИС", 
         car: "Hyundai Solaris", 
-        time_ivanovskoe_forward: null, time_ivanovskoe_reverse: "4:03.0",
+        time_ivanovskoe_forward: "3:50.0", time_ivanovskoe_reverse: "4:03.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
@@ -120,7 +120,7 @@ const driversData = [
     { 
         name: "РУСЛАН 14", 
         car: "ВАЗ-2114", 
-        time_ivanovskoe_forward: "3:45.0", time_ivanovskoe_reverse: "3:32.0",
+        time_ivanovskoe_forward: "3:30.0", time_ivanovskoe_reverse: "3:32.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
