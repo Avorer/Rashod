@@ -11,7 +11,7 @@ const driversData = [
     },
     { 
         name: "РУЛСАН ГРАНТОВИЧ", 
-        car: "ВАЗ-2190 FL", 
+        car: "ВАЗ-2113 (ГЛЕБОБА)", 
         time_ivanovskoe_forward: "3:33.0", time_ivanovskoe_reverse: "3:37.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
         time_raifa_forward: null, time_raifa_reverse: null,
