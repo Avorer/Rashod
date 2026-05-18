@@ -39,7 +39,7 @@ const driversData = [
     { 
         name: "ЛЕПЁША", 
         car: "ВАЗ-2190", 
-        time_ivanovskoe_forward: "3:48.0", time_ivanovskoe_reverse: "3:45.0",
+        time_ivanovskoe_forward: "3:32.0", time_ivanovskoe_reverse: "3:45.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
@@ -66,7 +66,7 @@ const driversData = [
     { 
         name: "АЛЕКС 9914", 
         car: "ВАЗ-21099", 
-        time_ivanovskoe_forward: "4:24.0", time_ivanovskoe_reverse: null,
+        time_ivanovskoe_forward: "4:24.0", time_ivanovskoe_reverse: "4:03.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
