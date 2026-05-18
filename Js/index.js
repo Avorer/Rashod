@@ -93,7 +93,7 @@ const driversData = [
     { 
         name: "БУЛАТ ЛАЧЕТТИ", 
         car: "Chevrolet Lacetti", 
-        time_ivanovskoe_forward: "4:04.0", time_ivanovskoe_reverse: "4:12.0",
+        time_ivanovskoe_forward: "4:04.0", time_ivanovskoe_reverse: "4:09.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
