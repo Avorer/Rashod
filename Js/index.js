@@ -41,7 +41,7 @@ const driversData = [
         car: "ВАЗ-2190", 
         time_ivanovskoe_forward: "3:32.0", time_ivanovskoe_reverse: "3:34.97",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
-        time_raifa_forward: null, time_raifa_reverse: null,
+        time_raifa_forward: null, time_raifa_reverse: "1:50.0",
         active: true, 
         profile: "drivers/leposha.html" 
     },
