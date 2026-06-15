@@ -161,21 +161,21 @@ const trackInfo = {
         turns: "16", 
         record_forward: "—:—",
         record_reverse: "—:—",
-        name: "ИВАНОВСКОЕ" 
+        name: "СПОТ №1" 
     },
     glubokoe: { 
         length: "1.61 км", 
         turns: "5", 
         record_forward: "—:—",
         record_reverse: "—:—",
-        name: "ГЛУБОКОЕ ОЗЕРО" 
+        name: "СПОТ №2" 
     },
     raifa: { 
         length: "3.6 км", 
         turns: "8", 
         record_forward: "—:—",
         record_reverse: "—:—",
-        name: "РАИФСКИЙ ДЕНДРАРИЙ" 
+        name: "СПОТ №3" 
     }
 };
 
