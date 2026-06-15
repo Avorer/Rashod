@@ -145,7 +145,7 @@ const driversData = [
         profile: "drivers/Max_CorsaOP.html" 
     },
     { 
-        name: "РУС КОРСА", 
+        name: "РУСЛАН ТАТМЕФ", 
         car: "Opel Corsa", 
         time_ivanovskoe_forward: null, time_ivanovskoe_reverse: null,
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
