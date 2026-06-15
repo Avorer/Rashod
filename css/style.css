@@ -23,7 +23,7 @@ html {
 body {
     background-color: #000;
     color: var(--neon-green);
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
     margin: 0;
     padding: 0;
     background-image: url('../img/index/phone.jpg');
