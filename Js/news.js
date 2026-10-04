@@ -16,7 +16,7 @@
                 "будь то джимхана, тайм аттак, батлы и т.д. Мы много работали и дошли до того, чтобы организовать для всех " +
                 "автолюбителей Татарстана и не только гонку, которая соединит несколько авто-культур и большое количество автолюбителей.",
             date: "04.10.2026",
-            image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=600&q=70"
+            image: "img/news/photoStart.jpg"
         }
     ];
 
@@ -35,8 +35,7 @@
     trackEl.innerHTML = NEWS.map(item => `
         <div class="news-slide">
             <div class="news-image">
-                <img src="${item.image}" alt="${item.title}" loading="lazy"
-                     onerror="this.src='img/index/phone.jpg';">
+                <img src="${item.image}" alt="${item.title}" loading="lazy">
             </div>
             <div class="news-body">
                 <div class="news-title">${item.title}</div>
