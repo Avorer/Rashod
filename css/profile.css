@@ -1,0 +1,77 @@
+/* Общий стиль страниц гонщиков (drivers/*.html) */
+:root {
+    --bg: #121316; --panel: #1b1d22; --line: #2d3037;
+    --text: #ecece8; --muted: #9a9ea6;
+    --signal: #f5c400; --red: #e5322d; --green: #3ddc84;
+    --head: 'Unbounded', 'Arial Black', sans-serif;
+    --body: 'Inter', Arial, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font: 400 1rem/1.6 var(--body); min-height: 100vh; overflow-x: hidden; }
+a { color: var(--signal); }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+
+.bar { position: sticky; top: 0; z-index: 10; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 max(20px, 4vw); background: rgba(18,19,22,.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.logo { display: flex; align-items: center; color: var(--text); font: 800 1.1rem var(--head); text-decoration: none; }
+.logo img { display: block; height: 30px; width: auto; max-width: 55vw; }
+.btn { display: inline-block; padding: 10px 20px; border: 2px solid var(--text); border-radius: 4px; color: var(--text); font: 600 .9rem var(--body); text-decoration: none; transition: background .2s, color .2s; }
+.btn:hover { background: var(--text); color: var(--bg); }
+
+.wrap { max-width: 1000px; margin: 0 auto; padding: clamp(28px, 6vw, 56px) max(20px, 4vw) 56px; }
+section { margin-top: clamp(36px, 7vw, 64px); }
+h2 { font: 800 clamp(1.3rem, 4vw, 1.8rem) / 1.2 var(--head); margin-bottom: 20px; }
+
+/* Шапка профиля */
+.profile { display: flex; align-items: center; gap: clamp(20px, 4vw, 36px); margin-top: 0; }
+.avatar { flex: 0 0 auto; width: clamp(110px, 22vw, 160px); aspect-ratio: 1; border: 2px solid var(--signal); border-radius: 8px; overflow: hidden; background: var(--panel); }
+.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.info { min-width: 0; }
+.profile h1 { font: 800 clamp(1.4rem, 5vw, 2.6rem) / 1.1 var(--head); margin: 12px 0; overflow-wrap: anywhere; }
+.status { display: inline-block; padding: 3px 12px; border: 1px solid; border-radius: 999px; font-size: .78rem; font-weight: 600; }
+.status.on { color: var(--green); }
+.status.off { color: var(--red); }
+.bio { color: var(--muted); max-width: 62ch; }
+
+/* Статистика */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin-top: clamp(28px, 6vw, 48px); }
+.stats div { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 18px 16px; }
+.stats dt { color: var(--muted); font-size: .85rem; order: 2; }
+.stats dd { font: 800 clamp(1.4rem, 4vw, 1.9rem) var(--head); }
+.stats div { display: flex; flex-direction: column; gap: 4px; }
+
+/* Карточки */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 20px; transition: transform .25s, border-color .25s; }
+.card:hover { transform: translateY(-3px); border-color: var(--signal); }
+.card h3 { font: 500 1rem / 1.3 var(--head); margin-bottom: 10px; }
+.car ul { list-style: none; color: var(--muted); font-size: .92rem; }
+.car li { padding: 4px 0 4px 16px; position: relative; border-top: 1px solid var(--line); }
+.car li:first-child { border-top: 0; }
+.car li::before { content: ''; position: absolute; left: 0; top: 13px; width: 6px; height: 6px; background: var(--signal); border-radius: 50%; }
+.car.missing { display: grid; place-items: center; min-height: 120px; background: none; border: 1px dashed var(--line); color: var(--muted); }
+.car.missing:hover { transform: none; border-color: var(--line); }
+.ach { display: flex; gap: 16px; align-items: center; }
+.ach img { flex: 0 0 56px; width: 56px; height: 56px; object-fit: cover; border-radius: 8px; border: 2px solid var(--signal); background: var(--bg); }
+.ach h3 { margin-bottom: 4px; }
+.ach p { color: var(--muted); font-size: .88rem; line-height: 1.4; }
+.more { display: inline-block; margin-top: 18px; font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--signal); color: var(--text); }
+.more:hover { color: var(--signal); }
+
+/* Рекорды */
+.note { color: var(--muted); font-size: .85rem; margin: -8px 0 12px; }
+.records { list-style: none; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.records li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 18px; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; transition: background .2s; }
+.records li:first-child { border-top: 0; }
+.records li:hover { background: rgba(245,196,0,.07); }
+.records span { color: var(--muted); }
+.records b { color: var(--signal); }
+
+.foot { padding: 28px 20px; text-align: center; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--line); }
+
+@media (max-width: 600px) {
+    .profile { flex-direction: column; text-align: center; }
+    .bio { margin: 0 auto; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }

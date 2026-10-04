@@ -1,0 +1,19 @@
+/* Страницы достижений (achievements/*.html). Подключается ПОСЛЕ profile.css и дополняет его */
+.bar nav { display: flex; gap: 8px; }
+.bar .btn { padding: 10px 16px; }
+
+.wrap > .head { margin-top: 0; }
+.head h1 { font: 800 clamp(1.4rem, 5vw, 2.6rem) / 1.1 var(--head); margin-bottom: 8px; }
+.head p { color: var(--muted); }
+
+.stats.two { grid-template-columns: repeat(2, 1fr); max-width: 380px; }
+
+/* Заблокированные достижения */
+.card.locked { background: none; border-style: dashed; }
+.card.locked:hover { transform: none; border-color: var(--line); }
+.card.locked img { filter: grayscale(1); opacity: .45; border-color: var(--line); }
+.card.locked h3 { color: var(--muted); }
+
+@media (max-width: 480px) {
+    .bar .btn.home { display: none; } /* на узком экране «На главную» — это логотип */
+}
