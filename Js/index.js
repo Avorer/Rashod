@@ -19,7 +19,7 @@ const driversData = [
         profile: "drivers/driver_rusGranta.html" 
     },
     { 
-        name: "ГЛЕБОБ 13 69", 
+        name: "BlackBird", 
         car: "ВАЗ-2113", 
         time_ivanovskoe_forward: "3:32.0", time_ivanovskoe_reverse: "3:46.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
