@@ -19,7 +19,7 @@ const driversData = [
         profile: "drivers/driver_rusGranta.html" 
     },
     { 
-        name: "BlackBird", 
+        name: "BLACKBIRD", 
         car: "ВАЗ-2113", 
         time_ivanovskoe_forward: "3:32.0", time_ivanovskoe_reverse: "3:46.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
@@ -55,7 +55,7 @@ const driversData = [
         profile: "drivers/edike.html" 
     },
     { 
-        name: "МАСРЕЛЬ ДИКАЛЮШЕН", 
+        name: "МАСРЕЛЬ РАЛЛИ АРТ", 
         car: "Mitsubishi Lancer IX", 
         time_ivanovskoe_forward: null, time_ivanovskoe_reverse: null,
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
@@ -64,7 +64,7 @@ const driversData = [
         profile: "drivers/masrel.html" 
     },
     { 
-        name: "Avorer", 
+        name: "AVORER", 
         car: "ВАЗ-21099", 
         time_ivanovskoe_forward: "4:24.0", time_ivanovskoe_reverse: "4:03.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
