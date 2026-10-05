@@ -14,7 +14,7 @@
         "АТУР СОЛЯРА": { wins: 0, on: true },
         "ЛЕПЁША": { wins: 0, on: false },
         "ЭДИКЕ ОТЕЦ": { wins: 0, on: true },
-        "МАСРЕЛЬ РАЛЛИ АРТ": { wins: 0, on: true },
+        "МАРСЕЛЬ РАЛЛИ АРТ": { wins: 0, on: true },
         "AVORER": { wins: 0, on: false },
         "ЯГЕРЬ ЧОПИРКУС": { wins: 0, on: true },
         "АДАР 10": { wins: 0, on: false },
