@@ -64,7 +64,7 @@ const driversData = [
         profile: "drivers/masrel.html" 
     },
     { 
-        name: "АЛЕКС 9914", 
+        name: "Avorer", 
         car: "ВАЗ-21099", 
         time_ivanovskoe_forward: "4:24.0", time_ivanovskoe_reverse: "4:03.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
