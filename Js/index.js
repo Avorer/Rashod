@@ -55,7 +55,7 @@ const driversData = [
         profile: "drivers/edike.html" 
     },
     { 
-        name: "МАСРЕЛЬ РАЛЛИ АРТ", 
+        name: "МАРСЕЛЬ РАЛЛИ АРТ", 
         car: "Mitsubishi Lancer IX", 
         time_ivanovskoe_forward: null, time_ivanovskoe_reverse: null,
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
