@@ -28,15 +28,6 @@ const driversData = [
         profile: "drivers/glebob.html" 
     },
     { 
-        name: "АТУР СОЛЯРА", 
-        car: "Hyundai Solaris", 
-        time_ivanovskoe_forward: "3:41.0", time_ivanovskoe_reverse: null,
-        time_glubokoe_forward: null, time_glubokoe_reverse: null,
-        time_raifa_forward: null, time_raifa_reverse: null,
-        active: false, 
-        profile: "drivers/atur_Solyara.html" 
-    },
-    { 
         name: "ЛЕПЁША", 
         car: "ВАЗ-2190", 
         time_ivanovskoe_forward: "3:32.0", time_ivanovskoe_reverse: "3:33.12",
@@ -89,15 +80,6 @@ const driversData = [
         time_raifa_forward: null, time_raifa_reverse: null,
         active: true, 
         profile: "drivers/adar.html" 
-    },
-    { 
-        name: "БУЛАТ ЛАЧЕТТИ", 
-        car: "Chevrolet Lacetti", 
-        time_ivanovskoe_forward: "3:47.0", time_ivanovskoe_reverse: "3:55.0",
-        time_glubokoe_forward: null, time_glubokoe_reverse: null,
-        time_raifa_forward: null, time_raifa_reverse: null,
-        active: true, 
-        profile: "drivers/bulat.html" 
     },
     { 
         name: "АЛМАЗ СОЛЯРИС", 
