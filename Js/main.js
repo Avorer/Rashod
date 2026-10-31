@@ -10,7 +10,7 @@
     const driverExtra = {
         "КАПЧЁС ЖОПЕЛЬ": { wins: 0, on: false },
         "РУЛСАН ГРАНТОВИЧ": { wins: 4, on: true },
-        "BLACKBIRD": { wins: 0, on: false },
+        "BLACKBIRD": { wins: 0, on: true },
         "ЛЕПЁША": { wins: 0, on: true },
         "ЭДИКЕ ОТЕЦ": { wins: 0, on: true },
         "МАРСЕЛЬ РАЛЛИ АРТ": { wins: 0, on: true },
