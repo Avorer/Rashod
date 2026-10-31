@@ -24,7 +24,7 @@ const driversData = [
         time_ivanovskoe_forward: "3:32.0", time_ivanovskoe_reverse: "3:46.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
         time_raifa_forward: null, time_raifa_reverse: null,
-        active: false, 
+        active: true, 
         profile: "drivers/glebob.html" 
     },
     { 
