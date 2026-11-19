@@ -17,7 +17,7 @@
         "AVORER": { wins: 0, on: true },
         "ЯГЕРЬ ЧОПИРКУС": { wins: 0, on: true },
         "АДАР 10": { wins: 0, on: false },
-        "АЛМАЗ СОЛЯРИС": { wins: 2, on: false },
+        "АЛМАЗ СОЛЯРИС": { wins: 2, on: true },
         "МАРАТ 13": { wins: 0, on: false },
         "РУСЛАН 14": { wins: 1, on: true },
         "АЛСАНДР 10КА": { wins: 0, on: true },
