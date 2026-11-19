@@ -82,7 +82,7 @@ const driversData = [
         profile: "drivers/adar.html" 
     },
     { 
-        name: "АЛМАЗ СОЛЯРИС", 
+        name: "ДЕПРЕСИД КИД", 
         car: "Honda Civic eg5", 
         time_ivanovskoe_forward: "3:27.0", time_ivanovskoe_reverse: "3:25.0",
         time_glubokoe_forward: null, time_glubokoe_reverse: null,
