@@ -1,0 +1,63 @@
+/* ============================================================
+   НОВОГОДНЯЯ ЗАСТАВКА «вайб 2021» (зимний сезон)
+   Это слой поверх обычной заставки. Сама обычная заставка
+   (css/style.css, Js/preloader.js) не изменена.
+
+   КАК ВЕРНУТЬ ОБЫЧНУЮ ЗАСТАВКУ, когда кончится зима:
+   удалите в index.html две строки (или закомментируйте их):
+     <link rel="stylesheet" href="css/preloader_newyear.css?v1">
+     <script src="Js/preloader_newyear.js?v1"></script>
+   Эти два файла можно оставить в репозитории до следующей зимы.
+   ============================================================ */
+.preloading #preloader.ny { background: radial-gradient(120% 80% at 50% 108%, #3a2417 0%, transparent 55%), linear-gradient(#070b18, #121a30 60%, #1b1c2a); }
+#preloader.ny .pl-streaks { display: none; }
+#preloader.ny .pl-center { z-index: 2; text-align: center; }
+#preloader.ny .pl-logo { filter: drop-shadow(0 0 22px rgba(255,190,90,.35)); }
+#preloader.ny .pl-logo::after { background-image: linear-gradient(100deg, transparent 35%, #ffd98a 50%, transparent 65%); }
+
+/* прогресс в виде леденца */
+#preloader.ny .pl-bar { height: 10px; border-radius: 6px; background: rgba(255,255,255,.12); box-shadow: 0 0 14px rgba(255,180,80,.25); }
+#preloader.ny .pl-fill { background: repeating-linear-gradient(135deg, #e5322d 0 10px, #fff4e6 10px 20px); }
+#preloader.ny .pl-meta { color: #c9cde0; }
+#preloader.ny .pl-meta b { color: #ffd98a; }
+
+/* дорога под снегом */
+#preloader.ny .pl-road { z-index: 1; bottom: 11%; opacity: .55; background: repeating-linear-gradient(90deg, #ffd98a 0 28px, transparent 28px 56px); }
+
+.ny-layer { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+
+/* тёплое боке */
+.ny-bokeh i { position: absolute; left: var(--x); top: var(--y); width: var(--s); height: var(--s); border-radius: 50%; background: radial-gradient(circle, var(--c) 0%, transparent 70%); opacity: .3; animation: ny-glow var(--t) ease-in-out var(--d) infinite alternate; }
+
+/* снег */
+.ny-snow { z-index: 3; }
+.ny-snow i { position: absolute; left: var(--x); top: -12px; width: var(--s); height: var(--s); border-radius: 50%; background: #fff; opacity: var(--o); box-shadow: 0 0 6px rgba(255,255,255,.7); animation: ny-fall var(--t) linear var(--d) infinite; }
+
+/* гирлянда */
+.ny-garland { position: absolute; left: 0; right: 0; top: 0; height: 90px; }
+.ny-garland svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ny-garland path { fill: none; stroke: #3b4a3f; stroke-width: 2; vector-effect: non-scaling-stroke; }
+.ny-garland i { position: absolute; width: 10px; height: 15px; margin-left: -5px; border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; background: var(--c); box-shadow: 0 0 14px 4px var(--c); animation: ny-blink 1.2s ease-in-out var(--d) infinite; }
+
+/* сугробы */
+.ny-drift { position: absolute; left: -10%; right: -10%; bottom: -60px; height: 130px; background:
+    radial-gradient(50% 60% at 20% 80%, #e9efff 98%, transparent),
+    radial-gradient(45% 50% at 55% 90%, #d5def5 98%, transparent),
+    radial-gradient(40% 65% at 85% 85%, #e9efff 98%, transparent); opacity: .9; }
+
+.ny-wish { margin-top: 18px; color: #ffe2a8; font: 800 clamp(.85rem, 3.6vw, 1.15rem) var(--head); text-shadow: 0 0 12px rgba(255,180,80,.65); }
+
+/* пасхалка: метка как на записи старой камеры */
+.ny-rec { position: absolute; z-index: 4; left: 18px; bottom: 18px; padding: 4px 10px; border-radius: 4px; background: rgba(0,0,0,.45); color: #fff; font: 600 .75rem/1.4 'Courier New', monospace; letter-spacing: .08em; }
+.ny-rec b { color: #ff4a43; animation: ny-blink 1s steps(2) infinite; }
+
+#preloader.ny.done .ny-wish { opacity: 0; transition: opacity .2s; }
+
+@keyframes ny-fall { to { transform: translate3d(var(--dx), calc(100vh + 24px), 0); } }
+@keyframes ny-blink { 50% { opacity: .35; } }
+@keyframes ny-glow { to { opacity: .6; transform: scale(1.2); } }
+
+@media (prefers-reduced-motion: reduce) {
+    .ny-snow { display: none; }
+    .ny-bokeh i, .ny-garland i, .ny-rec b { animation: none; }
+}

@@ -12,6 +12,8 @@
     <script>try{if(!sessionStorage.getItem('rashod_loaded')){document.documentElement.classList.add('preloading');setTimeout(function(){document.documentElement.classList.remove('preloading')},12000)}}catch(e){}</script>
     <link rel="icon" type="image/x-icon" href="img/index/icon.ico">
     <link rel="stylesheet" href="css/style.css?v20">
+    <!-- новогодняя заставка: чтобы вернуть обычную, удалите эту строку и скрипт preloader_newyear.js -->
+    <link rel="stylesheet" href="css/preloader_newyear.css?v1">
 </head>
 <body>
     <div id="preloader" role="status" aria-live="polite" aria-label="Загрузка">
@@ -23,6 +25,7 @@
         </div>
         <div class="pl-road" aria-hidden="true"></div>
     </div>
+    <script src="Js/preloader_newyear.js?v1"></script>
     <script src="Js/preloader.js?v1"></script>
     <header class="site-header" id="top">
         <a class="logo" href="#top" aria-label="РАСХОД"><img src="img/index/logo.png" alt="РАСХОД" onerror="this.replaceWith(document.createTextNode('РАСХОД'))"></a>
