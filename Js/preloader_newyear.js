@@ -32,9 +32,7 @@
         layer('ny-bokeh', bokeh) +
         `<div class="ny-garland" aria-hidden="true"><svg viewBox="0 0 1000 90" preserveAspectRatio="none"><path d="${path}"/></svg>${bulbs}</div>` +
         '<div class="ny-drift" aria-hidden="true"></div>');
-    el.insertAdjacentHTML('beforeend',
-        layer('ny-snow', snow) +
-        '<div class="ny-rec" aria-hidden="true"><b>●</b> REC · 31.12.2021 23:59</div>');
+    el.insertAdjacentHTML('beforeend', layer('ny-snow', snow));
 
     const label = el.querySelector('.pl-meta span');
     if (label) label.textContent = 'Прогреваемся';

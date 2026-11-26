@@ -5,8 +5,8 @@
 
    КАК ВЕРНУТЬ ОБЫЧНУЮ ЗАСТАВКУ, когда кончится зима:
    удалите в index.html две строки (или закомментируйте их):
-     <link rel="stylesheet" href="css/preloader_newyear.css?v3">
-     <script src="Js/preloader_newyear.js?v1"></script>
+     <link rel="stylesheet" href="css/preloader_newyear.css?v4">
+     <script src="Js/preloader_newyear.js?v2"></script>
    Эти два файла можно оставить в репозитории до следующей зимы.
    ============================================================ */
 .preloading #preloader.ny { background: radial-gradient(120% 80% at 50% 108%, #3a2417 0%, transparent 55%), linear-gradient(#070b18, #121a30 60%, #1b1c2a); }
@@ -47,18 +47,18 @@
 
 .ny-wish { margin-top: 18px; color: #ffe2a8; font: 800 clamp(.85rem, 3.6vw, 1.15rem) var(--head); text-shadow: 0 0 12px rgba(255,180,80,.65); }
 
-/* пасхалка: метка как на записи старой камеры */
-.ny-rec { position: absolute; z-index: 4; left: 18px; bottom: 18px; padding: 4px 10px; border-radius: 4px; background: rgba(0,0,0,.45); color: #fff; font: 600 .75rem/1.4 'Courier New', monospace; letter-spacing: .08em; }
-.ny-rec b { color: #ff4a43; animation: ny-blink 1s steps(2) infinite; }
-
 #preloader.ny.done .ny-wish { opacity: 0; transition: opacity .2s; }
 /* при закрытии низ гаснет сразу, чтобы светлый сугроб не висел полосой */
-#preloader.ny.done .ny-drift, #preloader.ny.done .ny-rec { opacity: 0; transition: opacity .2s; }
+#preloader.ny.done .ny-drift { opacity: 0; transition: opacity .2s; }
 
 /* на телефонах и планшетах сугроба нет: Safari на iPhone переносит светлый низ
    под свою нижнюю панель, и после загрузки там остаётся белая полоса */
 @media (max-width: 600px), (hover: none) and (pointer: coarse) {
     .ny-drift { display: none; }
+    /* низ плавно уходит в цвет сайта (var(--bg)): этим цветом закрашена зона
+       под нижней панелью Safari, поэтому стыка не видно */
+    .preloading #preloader.ny { background: linear-gradient(transparent 76%, var(--bg) 96%), radial-gradient(120% 70% at 50% 82%, #3a2417 0%, transparent 55%), linear-gradient(#070b18, #121a30 60%, #1b1c2a); }
+    #preloader.ny .ny-layer { -webkit-mask-image: linear-gradient(#000 80%, transparent 97%); mask-image: linear-gradient(#000 80%, transparent 97%); }
 }
 
 @keyframes ny-fall { to { transform: translate3d(var(--dx), calc(100vh + 24px), 0); } }
@@ -67,5 +67,5 @@
 
 @media (prefers-reduced-motion: reduce) {
     .ny-snow { display: none; }
-    .ny-bokeh i, .ny-garland i, .ny-rec b { animation: none; }
+    .ny-bokeh i, .ny-garland i { animation: none; }
 }
