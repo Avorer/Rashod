@@ -66,7 +66,8 @@
     trackEl.innerHTML = NEWS.map(item => `
         <div class="news-slide">
             <div class="news-image">
-                <img src="${item.image}" alt="${item.title}" loading="lazy">
+                <img class="news-backdrop" src="${item.image}" alt="" aria-hidden="true" loading="lazy">
+                <img class="news-photo" src="${item.image}" alt="${item.title}" loading="lazy">
             </div>
             <div class="news-body">
                 <div class="news-title">${item.title}</div>

@@ -122,11 +122,21 @@ td { font-variant-numeric: tabular-nums; }
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
 .js .reveal.in { opacity: 1; transform: none; }
 
+.news-image .news-backdrop { display: none; }
+
 /* Крупная лента новостей на ПК */
 @media (min-width: 1024px) {
-    .news-slide { gap: 28px; padding: 28px; }
-    .news-image { flex: 0 0 46%; height: auto; aspect-ratio: 16 / 9; align-self: center; }
-    .news-body { gap: 14px; }
+    .news-slide { gap: 0; padding: 0; }
+    /* картинка встроена в карточку: размытый фон от края до края, поверх целый кадр */
+    .news-image { flex: 0 0 50%; height: auto; position: relative; isolation: isolate; border-radius: 0; display: flex; align-items: center; }
+    .news-image .news-backdrop { display: block; position: absolute; inset: 0; z-index: -2; filter: blur(28px) brightness(.5); transform: scale(1.2); }
+    .news-image::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, transparent 55%, var(--panel)); }
+    .news-image .news-photo { height: auto; aspect-ratio: 16 / 9;
+        -webkit-mask-image: linear-gradient(transparent, #000 7%, #000 93%, transparent), linear-gradient(90deg, #000 97%, transparent);
+        -webkit-mask-composite: source-in;
+        mask-image: linear-gradient(transparent, #000 7%, #000 93%, transparent), linear-gradient(90deg, #000 97%, transparent);
+        mask-composite: intersect; }
+    .news-body { gap: 14px; padding: 28px 28px 28px 20px; }
     .news-title { font-size: 1.3rem; }
     .news-text { max-height: 360px; font-size: 1.05rem; line-height: 1.65; }
     .news-date { margin-top: auto; font-size: .9rem; }
