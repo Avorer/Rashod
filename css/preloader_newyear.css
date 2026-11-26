@@ -5,7 +5,7 @@
 
    КАК ВЕРНУТЬ ОБЫЧНУЮ ЗАСТАВКУ, когда кончится зима:
    удалите в index.html две строки (или закомментируйте их):
-     <link rel="stylesheet" href="css/preloader_newyear.css?v2">
+     <link rel="stylesheet" href="css/preloader_newyear.css?v3">
      <script src="Js/preloader_newyear.js?v1"></script>
    Эти два файла можно оставить в репозитории до следующей зимы.
    ============================================================ */
@@ -55,9 +55,10 @@
 /* при закрытии низ гаснет сразу, чтобы светлый сугроб не висел полосой */
 #preloader.ny.done .ny-drift, #preloader.ny.done .ny-rec { opacity: 0; transition: opacity .2s; }
 
-/* на телефоне сугроб ниже и темнее, чтобы не выглядел белой полосой */
-@media (max-width: 600px) {
-    .ny-drift { bottom: -90px; opacity: .3; }
+/* на телефонах и планшетах сугроба нет: Safari на iPhone переносит светлый низ
+   под свою нижнюю панель, и после загрузки там остаётся белая полоса */
+@media (max-width: 600px), (hover: none) and (pointer: coarse) {
+    .ny-drift { display: none; }
 }
 
 @keyframes ny-fall { to { transform: translate3d(var(--dx), calc(100vh + 24px), 0); } }
