@@ -171,13 +171,22 @@ function timeToSeconds(timeStr) {
     return minutes * 60 + seconds;
 }
 
+// Машина, на которой поставлено время (правки в Js/leaderboard_fixes.js)
+function getResultCar(driver, timeField) {
+    const key = timeField.replace('time_', '');
+    const time = driver[timeField];
+    const fixes = (typeof leaderboardFixes !== 'undefined') ? leaderboardFixes : [];
+    const fix = time && fixes.find(f => f.name === driver.name && f.times[key] === time);
+    return fix ? fix.car : driver.car;
+}
+
 // Получение данных для текущей трассы и направления
 function getTrackData() {
     const timeField = `time_${currentTrack}_${currentDirection}`;
     
     let results = driversData.map(driver => ({
         name: driver.name,
-        car: driver.car,
+        car: getResultCar(driver, timeField),
         time: driver[timeField] || "—:—",
         active: driver.active,
         profile: driver.profile,
