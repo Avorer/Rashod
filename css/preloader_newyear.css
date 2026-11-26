@@ -5,7 +5,7 @@
 
    КАК ВЕРНУТЬ ОБЫЧНУЮ ЗАСТАВКУ, когда кончится зима:
    удалите в index.html две строки (или закомментируйте их):
-     <link rel="stylesheet" href="css/preloader_newyear.css?v1">
+     <link rel="stylesheet" href="css/preloader_newyear.css?v2">
      <script src="Js/preloader_newyear.js?v1"></script>
    Эти два файла можно оставить в репозитории до следующей зимы.
    ============================================================ */
@@ -52,6 +52,13 @@
 .ny-rec b { color: #ff4a43; animation: ny-blink 1s steps(2) infinite; }
 
 #preloader.ny.done .ny-wish { opacity: 0; transition: opacity .2s; }
+/* при закрытии низ гаснет сразу, чтобы светлый сугроб не висел полосой */
+#preloader.ny.done .ny-drift, #preloader.ny.done .ny-rec { opacity: 0; transition: opacity .2s; }
+
+/* на телефоне сугроб ниже и темнее, чтобы не выглядел белой полосой */
+@media (max-width: 600px) {
+    .ny-drift { bottom: -90px; opacity: .3; }
+}
 
 @keyframes ny-fall { to { transform: translate3d(var(--dx), calc(100vh + 24px), 0); } }
 @keyframes ny-blink { 50% { opacity: .35; } }
