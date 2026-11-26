@@ -122,6 +122,16 @@ td { font-variant-numeric: tabular-nums; }
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
 .js .reveal.in { opacity: 1; transform: none; }
 
+/* Крупная лента новостей на ПК */
+@media (min-width: 1024px) {
+    .news-slide { gap: 28px; padding: 28px; }
+    .news-image { flex: 0 0 46%; height: auto; aspect-ratio: 16 / 9; align-self: center; }
+    .news-body { gap: 14px; }
+    .news-title { font-size: 1.3rem; }
+    .news-text { max-height: 360px; font-size: 1.05rem; line-height: 1.65; }
+    .news-date { margin-top: auto; font-size: .9rem; }
+}
+
 /* Адаптация */
 @media (max-width: 860px) {
     .burger { display: flex; }
