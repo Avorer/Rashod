@@ -1,7 +1,7 @@
 /* ============================================================
    Украшения новогодней заставки «вайб 2021».
    Подключается ПЕРЕД Js/preloader.js. Логика загрузки там же,
-   здесь только оформление. Как вернуть обычную заставку:
+   здесь только оформление и звук. Как вернуть обычную заставку:
    см. начало css/preloader_newyear.css
    ============================================================ */
 (function () {
@@ -37,4 +37,46 @@
     const label = el.querySelector('.pl-meta span');
     if (label) label.textContent = 'Прогреваемся';
     el.querySelector('.pl-center').insertAdjacentHTML('beforeend', '<div class="ny-wish">С наступающим 2027!</div>');
+
+    /* ---- Новогодний перезвон ----
+       Звук синтезируется кодом, аудиофайл не нужен. Играет, только если
+       браузер разрешает автозапуск; иначе сайт открывается без звука. */
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    const ctx = new AC();
+    let state = 'wait';
+
+    function bell(out, at, freq, amp, decay) {
+        // обертоны колокольчика: [множитель частоты, громкость, скорость затухания]
+        [[1, 1, 1], [1.003, .6, 1.1], [2, .45, 1.4], [2.76, .3, 2], [5.4, .12, 3.2]].forEach(([ratio, a, k]) => {
+            const osc = ctx.createOscillator(), gain = ctx.createGain();
+            const end = at + Math.min(3, 6.2 / (decay * k));
+            osc.frequency.value = freq * ratio;
+            gain.gain.setValueAtTime(0, at);
+            gain.gain.linearRampToValueAtTime(amp * a, at + .004);
+            gain.gain.exponentialRampToValueAtTime(.0001, end);
+            osc.connect(gain).connect(out);
+            osc.start(at);
+            osc.stop(end);
+        });
+    }
+
+    function play() {
+        if (state !== 'wait' || ctx.state !== 'running') return;
+        state = 'played';
+        const out = ctx.createGain(), t = ctx.currentTime + .05;
+        out.gain.value = .16; // общая громкость
+        out.connect(ctx.destination);
+        [[0, 1046.5], [.22, 1318.5], [.44, 1568], [.66, 2093], [1.05, 1760], [1.3, 2093]]
+            .forEach(([d, f]) => bell(out, t + d, f, .5, 2.6));
+        for (let i = 0; i < 14; i++) bell(out, t + i * .11, rnd(3200, 4600), .07, 14); // бубенцы
+        setTimeout(() => ctx.close(), 4000);
+    }
+
+    play();
+    if (state === 'wait') {
+        ctx.resume().then(play).catch(() => {});
+        // не разрешили сразу: отменяем, чтобы звук не сработал неожиданно позже
+        setTimeout(() => { if (state === 'wait') { state = 'blocked'; ctx.close(); } }, 700);
+    }
 })();

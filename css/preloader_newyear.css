@@ -6,7 +6,7 @@
    КАК ВЕРНУТЬ ОБЫЧНУЮ ЗАСТАВКУ, когда кончится зима:
    удалите в index.html две строки (или закомментируйте их):
      <link rel="stylesheet" href="css/preloader_newyear.css?v4">
-     <script src="Js/preloader_newyear.js?v2"></script>
+     <script src="Js/preloader_newyear.js?v3"></script>
    Эти два файла можно оставить в репозитории до следующей зимы.
    ============================================================ */
 .preloading #preloader.ny { background: radial-gradient(120% 80% at 50% 108%, #3a2417 0%, transparent 55%), linear-gradient(#070b18, #121a30 60%, #1b1c2a); }
