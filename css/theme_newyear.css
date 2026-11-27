@@ -1,0 +1,62 @@
+/* ============================================================
+   НОВОГОДНЯЯ ТЕМА всех страниц (зимний сезон)
+   Это слой поверх обычного дизайна: style.css, profile.css и
+   achievements.css не изменены.
+
+   КАК ВЕРНУТЬ ОБЫЧНЫЙ ДИЗАЙН: на каждой странице (index.html,
+   drivers/*.html, achievements/*.html) удалите две строки,
+   где есть "theme_newyear" (<link> и <script>).
+   Заставка отключается отдельно: см. css/preloader_newyear.css
+   ============================================================ */
+:root { --bg: #0c1020; --panel: #161b30; --line: #2b3354; --muted: #a7adc4; --warm: #ffd98a; }
+html { background: var(--bg); }
+body { background: var(--bg); }
+.site-header::before { background: rgba(12,16,32,.86); }
+.bar { background: rgba(12,16,32,.86); }
+@media (max-width: 860px) { .menu { background: rgba(12,16,32,.97); } }
+
+/* фон первого экрана: ночь и тёплый свет */
+.hero { background: linear-gradient(180deg, rgba(12,16,32,.55), var(--bg) 96%), url('../img/index/phone.jpg') center / cover; }
+.hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; background:
+    radial-gradient(circle at 78% 24%, rgba(255,179,71,.28) 0, transparent 9%),
+    radial-gradient(circle at 90% 48%, rgba(255,106,61,.24) 0, transparent 11%),
+    radial-gradient(circle at 66% 62%, rgba(255,179,71,.18) 0, transparent 8%),
+    radial-gradient(circle at 84% 76%, rgba(255,106,61,.2) 0, transparent 10%),
+    radial-gradient(120% 60% at 50% 105%, rgba(120,70,35,.35), transparent 60%); }
+.hero-inner, .hero .road-line { z-index: 1; }
+.hero-inner { position: relative; }
+.hero h1 { text-shadow: 0 0 34px rgba(255,190,90,.35); }
+.road-line { background: repeating-linear-gradient(90deg, var(--warm) 0 28px, transparent 28px 56px); }
+.section:not(.alt):not(.hero) { background: radial-gradient(45% 40% at 100% 0%, rgba(255,140,60,.07), transparent), radial-gradient(40% 40% at 0% 100%, rgba(79,168,255,.07), transparent); }
+
+/* полоска-леденец под заголовками */
+main h2::after, .news-label::after, .head h1::after { content: ''; display: block; width: 76px; height: 6px; margin-top: 12px; border-radius: 3px; background: repeating-linear-gradient(135deg, #e5322d 0 8px, #fff4e6 8px 16px); }
+
+/* снежные шапки на блоках */
+.card:not(.locked):not(.missing), .stats div, .news-window, .records, .table-wrapper { position: relative; }
+.card:not(.locked):not(.missing)::before, .stats div::before, .news-window::before, .records::before, .table-wrapper::before {
+    content: ''; position: absolute; z-index: 3; left: 5px; right: 5px; top: -4px; height: 13px; pointer-events: none; opacity: .92;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='13'%3E%3Cpath fill='%23eef3ff' d='M0 4Q8 0 20 3T44 3Q56 0 68 3T96 3Q108 1 120 4V6Q112 8 106 6Q103 13 98 12Q94 12 93 6Q82 5 74 8Q66 10 58 6Q47 5 42 7Q40 11 36 10Q33 10 32 6Q22 5 14 8Q6 9 0 6Z'/%3E%3C/svg%3E") repeat-x left top / 120px 13px; }
+
+/* тёплое свечение */
+.card:not(.locked):not(.missing):hover { border-color: var(--warm); box-shadow: 0 10px 30px rgba(255,180,80,.18); }
+.btn-solid { box-shadow: 0 0 20px rgba(255,196,60,.4); }
+.avatar { box-shadow: 0 0 26px rgba(255,190,90,.35); }
+.logo img { filter: drop-shadow(0 0 8px rgba(255,190,90,.35)); }
+
+.site-footer::before, .foot::before { content: 'С наступающим 2027!'; display: block; margin-bottom: 8px; color: var(--warm); font: 800 .95rem var(--head); text-shadow: 0 0 12px rgba(255,180,80,.55); }
+
+/* гирлянда под шапкой */
+.nyt-garland { position: absolute; left: 0; right: 0; top: 100%; height: 30px; pointer-events: none; }
+.nyt-garland svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.nyt-garland path { fill: none; stroke: #4a5c50; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.nyt-garland i { position: absolute; width: 7px; height: 11px; margin-left: -3.5px; border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; background: var(--c); box-shadow: 0 0 9px 2px var(--c); animation: nyt-blink 2.4s ease-in-out var(--d) infinite; }
+.site-header:has(.menu.open) .nyt-garland { display: none; }
+
+/* лёгкий снег поверх страницы, не мешает нажимать */
+.nyt-snow { position: fixed; inset: 0; z-index: 40; overflow: hidden; pointer-events: none; }
+.nyt-snow i { position: absolute; left: var(--x); top: -10px; width: var(--s); height: var(--s); border-radius: 50%; background: #fff; opacity: var(--o); animation: nyt-fall var(--t) linear var(--d) infinite; }
+
+@keyframes nyt-blink { 50% { opacity: .35; } }
+@keyframes nyt-fall { to { transform: translate3d(var(--dx), calc(100vh + 20px), 0); } }
+@media (prefers-reduced-motion: reduce) { .nyt-snow { display: none; } .nyt-garland i { animation: none; } }
