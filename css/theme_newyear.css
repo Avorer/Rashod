@@ -44,7 +44,6 @@ main h2::after, .news-label::after, .head h1::after { content: ''; display: bloc
 .avatar { box-shadow: 0 0 26px rgba(255,190,90,.35); }
 .logo img { filter: drop-shadow(0 0 8px rgba(255,190,90,.35)); }
 
-.site-footer::before, .foot::before { content: 'С наступающим 2027!'; display: block; margin-bottom: 8px; color: var(--warm); font: 800 .95rem var(--head); text-shadow: 0 0 12px rgba(255,180,80,.55); }
 
 /* гирлянда под шапкой */
 .nyt-garland { position: absolute; left: 0; right: 0; top: 100%; height: 30px; pointer-events: none; }
